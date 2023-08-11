@@ -1,0 +1,4 @@
+<div *ngFor="let quizQuestion of quizQuestions">
+    <p>{{quizQuestion.question}}</p>
+    <button class="answer" type="button" *ngFor="let answer of quizQuestion.answers">{{answer}}</button>
+</div>
