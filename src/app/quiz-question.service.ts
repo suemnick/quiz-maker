@@ -27,7 +27,8 @@ export class QuizQuestionService {
     return {
       question: atob(item.question),
       correctAnswer: allAnswers.findIndex(answer => answer === correctAnswer),
-      answers: allAnswers
+      answers: allAnswers,
+      selectedAnswer: undefined
     }
   }
 }

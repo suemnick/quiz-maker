@@ -1,3 +1,7 @@
 button.answer {
     margin-right: 1rem;
 }
+button:disabled.answer {
+    background-color: green;
+    color: white;
+}

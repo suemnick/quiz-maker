@@ -22,4 +22,8 @@ export class QuizQuestionsComponent implements OnChanges {
         .subscribe(quizQuestions => this.quizQuestions = quizQuestions);
     }
   }
+
+  selectAnswer(quizQuestionIndex: number, selectedAnswerIndex: number) {
+    this.quizQuestions[quizQuestionIndex].selectedAnswer = selectedAnswerIndex;
+  }
 }

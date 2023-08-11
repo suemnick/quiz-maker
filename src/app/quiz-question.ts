@@ -1,5 +1,6 @@
 export interface QuizQuestion {
     question: string,
     correctAnswer: number,
-    answers: string[]
+    answers: string[],
+    selectedAnswer: number | undefined
 }
