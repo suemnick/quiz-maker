@@ -1,0 +1,17 @@
+<h2 class="headline">QUIZ MAKER</h2>
+<form [formGroup]="quizConfigForm" (submit)="createQuiz()">
+    <select id="categorySelect" formControlName="categorySelect">
+        <option value="placeholder" disabled selected hidden>Select a category</option>
+        <option value="general-knowledge">General Knowledge</option>
+        <option value="books">Books</option>
+        <option value="film">Film</option>
+        <option value="music">Music</option>
+    </select>
+    <select id="difficultySelect" formControlName="difficultySelect">
+        <option value="placeholder" disabled selected hidden>Select difficulty</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+    </select>
+    <button type="submit" id="createBtn">Create</button>
+</form>

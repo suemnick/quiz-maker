@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+h2.headline {
+    text-align: center;
+}
+select {
+    padding: 0.5rem;
+}
+button {
+    padding: 0.5rem;
+}
