@@ -13,5 +13,5 @@
         <option value="medium">Medium</option>
         <option value="hard">Hard</option>
     </select>
-    <button type="submit" id="createBtn">Create</button>
+    <button type="submit" id="createBtn" [disabled]="!quizConfigForm.valid">Create</button>
 </form>
