@@ -5,3 +5,10 @@ button:disabled.answer {
     background-color: green;
     color: white;
 }
+
+button.submit {
+    background-color: gray;
+    color: white;
+    margin-top: 3rem;
+    width: 100%;
+}

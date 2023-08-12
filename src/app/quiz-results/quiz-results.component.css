@@ -1,0 +1,21 @@
+button.create {
+    background-color: gray;
+    color: white;
+    margin-top: 3rem;
+    width: 100%;
+}
+button.correct-answer {
+    background-color: green;
+    color: white;
+    margin-right: 1rem;
+}
+button.answer {
+    background-color: white;
+    color: black;
+    margin-right: 1rem;
+}
+button.selected-answer {
+    background-color: red;
+    color: white;
+    margin-right: 1rem;
+}

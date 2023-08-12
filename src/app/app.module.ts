@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuizConfigComponent } from './quiz-config/quiz-config.component';
 import { QuizQuestionsComponent } from './quiz-questions/quiz-questions.component';
+import { QuizResultsComponent } from './quiz-results/quiz-results.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuizConfigComponent,
-    QuizQuestionsComponent
+    QuizQuestionsComponent,
+    QuizResultsComponent
   ],
   imports: [
     BrowserModule,

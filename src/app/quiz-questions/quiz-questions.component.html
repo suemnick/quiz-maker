@@ -4,3 +4,4 @@
         [disabled]="ai === quizQuestion.selectedAnswer"
         *ngFor="let answer of quizQuestion.answers; index as ai">{{answer}}</button>
 </div>
+<button type="button" class="submit" *ngIf="quizComplete" (click)="showResults()">Submit</button>

@@ -1,0 +1,8 @@
+<h2 class="headline">RESULTS</h2>
+<div *ngFor="let quizQuestion of quizQuestions; index as qi">
+    <p>{{quizQuestion.question}}</p>
+    <button type="button" disabled
+        [class]="getAnswerClass(quizQuestion, ai)"
+        *ngFor="let answer of quizQuestion.answers; index as ai">{{answer}}</button>
+</div>
+<button type="button" class="create" [routerLink]="''">Create a new quiz</button>
