@@ -9,11 +9,17 @@ import { QuizService } from '../quiz.service';
 })
 export class QuizResultsComponent implements OnInit {
   quizQuestions: QuizQuestion[] = [];
+  score = 0;
 
   constructor(private quizService: QuizService) {}
 
   ngOnInit(): void {
     this.quizQuestions = this.quizService.quizQuetions;
+    this.quizQuestions.forEach(question => {
+      if (question.selectedAnswer === question.correctAnswer) {
+        this.score++;
+      }
+     });
   }
 
   getAnswerClass(question: QuizQuestion, answerIndex: number): string {
