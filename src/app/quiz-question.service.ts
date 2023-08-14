@@ -13,19 +13,19 @@ export class QuizQuestionService {
   constructor(private httpClient: HttpClient) { }
 
   getQuizQuestions(categoryId: number, difficulty: string): Observable<QuizQuestion[]> {
-    return this.httpClient.get<QuizApiResponse>(`${this.quizQuestionsUrl}?amount=5&category=${categoryId}&difficulty=${difficulty}&type=multiple&encode=base64`)
+    return this.httpClient.get<QuizApiResponse>(`${this.quizQuestionsUrl}?amount=5&category=${categoryId}&difficulty=${difficulty}&type=multiple&encode=url3986`)
       .pipe(
         map((response: QuizApiResponse) => response.results.map(item => this.mapToQuizQuestion(item)))
       );
   }
 
   private mapToQuizQuestion(item: QuizApiItem): QuizQuestion {
-    const correctAnswer = atob(item.correct_answer);
+    const correctAnswer = decodeURIComponent(item.correct_answer);
     const allAnswers = [...item.incorrect_answers, item.correct_answer]
-      .map(answer => atob(answer))
+      .map(answer => decodeURIComponent(answer))
       .sort(() => Math.random() - 0.5);
     return {
-      question: atob(item.question),
+      question: decodeURIComponent(item.question),
       correctAnswer: allAnswers.findIndex(answer => answer === correctAnswer),
       answers: allAnswers,
       selectedAnswer: undefined
