@@ -1,62 +1,68 @@
 button.correct-answer {
-    background-color: green;
-    color: white;
-    border: 0.1rem solid green;
-    border-radius: 0.25rem;
-    padding: 0.5rem;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
+  background-color: green;
+  color: white;
+  border: 0.1rem solid green;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
 }
+
 button.answer {
-    background-color: white;
-    color: green;
-    border: 0.1rem solid green;
-    border-radius: 0.25rem;
-    padding: 0.5rem;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
+  background-color: white;
+  color: green;
+  border: 0.1rem solid green;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
 }
+
 button.selected-answer {
-    background-color: red;
-    color: white;
-    border: 0.1rem solid red;
-    border-radius: 0.25rem;
-    padding: 0.5rem;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
+  background-color: red;
+  color: white;
+  border: 0.1rem solid red;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
 }
+
 button.create {
-    background-color: gray;
-    color: white;
-    border: 0.1rem solid gray;
-    border-radius: 0.25rem;
-    padding: 0.5rem;
-    display: block;
-    margin-top: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-  }
-  button:hover.create {
-    background-color: rgb(90, 90, 90);
-    color: white;
-    border: 0.1rem solid rgb(90, 90, 90);
-  }
-  button:active.create {
-    background-color: rgb(170, 170, 170);
-    color: white;
-    border: 0.1rem solid rgb(170, 170, 170);
-  }
-  p.score {
-    text-align: center;
-  }
-  span.score {
-    background-color: red;
-    color: black;
-    display: inline-block;
-    padding-right: 5rem;
-    padding-left: 5rem;
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-    text-align: center;
-  }
+  background-color: gray;
+  color: white;
+  border: 0.1rem solid gray;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  display: block;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+button:hover.create {
+  background-color: rgb(90, 90, 90);
+  color: white;
+  border: 0.1rem solid rgb(90, 90, 90);
+}
+
+button:active.create {
+  background-color: rgb(170, 170, 170);
+  color: white;
+  border: 0.1rem solid rgb(170, 170, 170);
+}
+
+p.score {
+  text-align: center;
+}
+
+span.score {
+  color: black;
+  display: inline-block;
+  padding-right: 5rem;
+  padding-left: 5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  text-align: center;
+}

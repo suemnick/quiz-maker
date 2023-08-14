@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { QuizCategoryService } from '../quiz-category.service';
 import { QuizCategory } from '../quiz-category';
+import { QuizQuestionsComponent } from '../quiz-questions/quiz-questions.component';
 
 @Component({
   selector: 'app-quiz-config',
@@ -18,8 +19,11 @@ export class QuizConfigComponent implements OnInit {
   selectedCategoryId: number | undefined;
   selectedDifficulty: string | undefined;
 
-  constructor(private quizCategoryService: QuizCategoryService) {}
-  
+  @ViewChild(QuizQuestionsComponent)
+  private quizQuestions!: QuizQuestionsComponent;
+
+  constructor(private quizCategoryService: QuizCategoryService) { }
+
   ngOnInit(): void {
     this.quizCategoryService.getQuizCategories().subscribe(quizCategories => this.quizCategories = quizCategories);
   }
@@ -28,6 +32,9 @@ export class QuizConfigComponent implements OnInit {
     const categorySelectNumber = Number(this.quizConfigForm.get('categorySelect')?.value);
     this.selectedCategoryId = isNaN(categorySelectNumber) ? undefined : categorySelectNumber;
     this.selectedDifficulty = this.quizConfigForm.get('difficultySelect')?.value ?? undefined;
+    if (this.selectedCategoryId !== undefined && this.selectedDifficulty !== undefined) {
+      this.quizQuestions.createQuiz(this.selectedCategoryId, this.selectedDifficulty);
+    }
   }
 }
 

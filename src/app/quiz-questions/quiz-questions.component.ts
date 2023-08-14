@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component } from '@angular/core';
 import { QuizQuestionService } from '../quiz-question.service';
 import { QuizQuestion } from '../quiz-question';
 import { Router } from '@angular/router';
@@ -9,23 +9,26 @@ import { QuizService } from '../quiz.service';
   templateUrl: './quiz-questions.component.html',
   styleUrls: ['./quiz-questions.component.css']
 })
-export class QuizQuestionsComponent implements OnChanges {
-  @Input() categoryId: number | undefined;
-  @Input() difficulty: string | undefined;
-
+export class QuizQuestionsComponent {
+  fetchingQuestions = false;
   quizQuestions: QuizQuestion[] = [];
   quizComplete = false;
 
   constructor(
-    private quizQuestionService: QuizQuestionService, 
-    private router: Router, 
+    private quizQuestionService: QuizQuestionService,
+    private router: Router,
     private quizService: QuizService) { }
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (this.categoryId !== undefined && this.difficulty !== undefined) {
-      this.quizQuestionService.getQuizQuestions(this.categoryId, this.difficulty)
-        .subscribe(quizQuestions => this.quizQuestions = quizQuestions);
+  createQuiz(categoryId: number, difficulty: string) {
+    if (this.fetchingQuestions) {
+      return;
     }
+    this.fetchingQuestions = true;
+    this.quizQuestionService.getQuizQuestions(categoryId, difficulty)
+      .subscribe(quizQuestions => {
+        this.quizQuestions = quizQuestions;
+        this.fetchingQuestions = false;
+      });
   }
 
   selectAnswer(quizQuestionIndex: number, selectedAnswerIndex: number) {

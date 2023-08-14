@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { QuizQuestion } from '../quiz-question';
 import { QuizService } from '../quiz.service';
 
@@ -11,7 +11,7 @@ export class QuizResultsComponent implements OnInit {
   quizQuestions: QuizQuestion[] = [];
   score = 0;
 
-  constructor(private quizService: QuizService) {}
+  constructor(private quizService: QuizService) { }
 
   ngOnInit(): void {
     this.quizQuestions = this.quizService.quizQuetions;
@@ -19,7 +19,7 @@ export class QuizResultsComponent implements OnInit {
       if (question.selectedAnswer === question.correctAnswer) {
         this.score++;
       }
-     });
+    });
   }
 
   getAnswerClass(question: QuizQuestion, answerIndex: number): string {
@@ -35,5 +35,11 @@ export class QuizResultsComponent implements OnInit {
         answerClass = 'answer';
     }
     return answerClass;
+  }
+
+  getScoreBackground() {
+    if (this.score < 2) { return 'red'; }
+    if (this.score < 4) { return 'yellow'; }
+    return 'green';
   }
 }

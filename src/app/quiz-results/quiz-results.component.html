@@ -5,5 +5,5 @@
         [class]="getAnswerClass(quizQuestion, ai)"
         *ngFor="let answer of quizQuestion.answers; index as ai">{{answer}}</button>
 </div>
-<p class="score"><span class="score">You scored {{score}} out of 5</span></p>
+<p class="score"><span class="score" [style.background-color]="getScoreBackground()">You scored {{score}} out of 5</span></p>
 <button type="button" class="create" [routerLink]="''">Create a new quiz</button>
